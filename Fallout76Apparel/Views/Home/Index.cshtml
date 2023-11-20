@@ -11,7 +11,7 @@
     @foreach (var outfit in @Model)
     {
         <tr>
-            <td><a asp-controller="Home" asp-action="ViewOutfit" asp-route-id="@outfit.OutfitID">@outfit.OutfitID</a></td>
+            <td><a id="anchors-fixed" asp-controller="Home" asp-action="ViewOutfit" asp-route-id="@outfit.OutfitID">@outfit.OutfitID</a></td>
             <td>@outfit.Name</td>
             <td>@outfit.Rarity</td>
             <td>@outfit.Category</td>

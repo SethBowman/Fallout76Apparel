@@ -72,3 +72,7 @@ main img {
 .header-text-color {
     color: #409F5D !important;
 }
+
+#anchors-fixed:hover {
+    color: #409F5D;
+}
