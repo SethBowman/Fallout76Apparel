@@ -35,5 +35,11 @@ namespace Fallout76Apparel.Controllers
             var outfit = _repo.GetSingleOutfit(id);
             return View(outfit);
         }
+
+        public IActionResult Search(string search)
+        {
+            var searchResult = _repo.SearchOutfit(search);
+            return View(searchResult);
+        }
     }
 }

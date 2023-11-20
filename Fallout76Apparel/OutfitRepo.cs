@@ -21,5 +21,10 @@ namespace Fallout76Apparel
         {
             return _conn.QuerySingle<Outfit>("SELECT * FROM outfits WHERE outfitId = @id;", new { id });
         }
+
+        public IEnumerable<Outfit> SearchOutfit(string search)
+        {
+            return _conn.Query<Outfit>("SELECT * FROM outfits WHERE name LIKE @name;", new { name = $"%{search}%" });
+        }
     }
 }

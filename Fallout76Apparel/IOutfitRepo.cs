@@ -6,5 +6,6 @@ namespace Fallout76Apparel
     {
         public IEnumerable<Outfit> GetAllOutfits();
         public Outfit GetSingleOutfit(int id);
+        public IEnumerable<Outfit> SearchOutfit(string search);
     }
 }
