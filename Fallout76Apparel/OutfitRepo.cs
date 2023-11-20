@@ -16,5 +16,10 @@ namespace Fallout76Apparel
         {
             return _conn.Query<Outfit>("SELECT * FROM outfits;");
         }
+
+        public Outfit GetSingleOutfit(int id)
+        {
+            return _conn.QuerySingle<Outfit>("SELECT * FROM outfits WHERE outfitId = @id;", new { id });
+        }
     }
 }

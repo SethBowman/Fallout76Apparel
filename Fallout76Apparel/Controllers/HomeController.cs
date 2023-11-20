@@ -5,15 +5,13 @@ using System.Diagnostics;
 namespace Fallout76Apparel.Controllers
 {
     public class HomeController : Controller
-    {
-       
+    {       
         private readonly IOutfitRepo _repo;
 
         public HomeController(IOutfitRepo repo)
         {
             _repo = repo;
         }
-
 
         public IActionResult Index()
         {
@@ -26,10 +24,16 @@ namespace Fallout76Apparel.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
+
+        public IActionResult ViewOutfit(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var outfit = _repo.GetSingleOutfit(id);
+            return View(outfit);
         }
     }
 }
