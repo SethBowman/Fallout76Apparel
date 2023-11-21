@@ -82,3 +82,13 @@ main img {
     width: 75px;
     margin-right: 25px;
 }
+
+#form-styles, input {
+    box-shadow: 0 10px 10px 0 rgba(10, 11, 14, 0.6);
+    border-radius: 10px;
+    background-color: #000;
+}
+
+    
+
+   
