@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Fallout76Apparel.Controllers
 {
     public class HomeController : Controller
-    {       
+    {
         private readonly IOutfitRepo _repo;
 
         public HomeController(IOutfitRepo repo)
@@ -40,6 +40,27 @@ namespace Fallout76Apparel.Controllers
         {
             var searchResult = _repo.SearchOutfit(search);
             return View(searchResult);
+        }
+
+        public IActionResult MysteriousStranger(int id)
+        {
+            var outfit = _repo.GetSingleOutfit(id);
+            return View(outfit);            
+        }
+
+        public IActionResult Chance(int id)
+        {
+            var r = new Random();
+            var chance = r.Next(0, 350);
+
+            if(id == chance)
+            {;
+                return RedirectToAction("MysteriousStranger", new {id});                
+            }
+            else
+            {
+                return RedirectToAction("ViewOutfit", new {id});               
+            }
         }
     }
 }
