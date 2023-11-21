@@ -1,5 +1,14 @@
 ﻿@model IEnumerable<Outfit>
 
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+    <p>
+        Find by Outfit Name: @Html.TextBox("search")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
 <table class="table">
     <tr>
         <th>ID</th>
