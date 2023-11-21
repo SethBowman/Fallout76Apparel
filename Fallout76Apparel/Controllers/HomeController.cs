@@ -54,7 +54,7 @@ namespace Fallout76Apparel.Controllers
             var chance = r.Next(0, 350);
 
             if(id == chance)
-            {;
+            {
                 return RedirectToAction("MysteriousStranger", new {id});                
             }
             else
