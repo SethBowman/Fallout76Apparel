@@ -51,11 +51,11 @@ namespace Fallout76Apparel.Controllers
         public IActionResult Chance(int id)
         {
             var r = new Random();
-            var chance = r.Next(0, 350);
+            var chance = r.Next(1, 350);
 
             if(id == chance)
             {;
-                return RedirectToAction("MysteriousStranger", new {id});                
+                return RedirectToAction("MysteriousStranger", new {id});           
             }
             else
             {
